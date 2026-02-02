@@ -1,0 +1,15 @@
+plugins {
+    id 'maven-publish'
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = "com.github.tranli"
+            artifactId = "bmap-mobile-sdk"
+            version = "5.2.0"
+
+            artifact("libs/bmap-mobile-sdk-5.2.0.aar")
+        }
+    }
+}
