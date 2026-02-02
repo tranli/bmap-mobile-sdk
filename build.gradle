@@ -2,13 +2,26 @@ plugins {
     id 'maven-publish'
 }
 
+group = "com.github.tranli"
+version = "5.2.0"
+
+/**
+ * ✅ JitPack requires an `assemble` task.
+ * Since this repo only contains a prebuilt AAR,
+ * we create a dummy assemble task.
+ */
+tasks.register("assemble") {
+    doLast {
+        println("Assembling prebuilt AAR...")
+    }
+}
+
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = "com.github.tranli"
             artifactId = "bmap-mobile-sdk"
-            version = "5.2.0"
 
+            // ✅ Publish the AAR file
             artifact("libs/bmap-mobile-sdk-5.2.0.aar")
         }
     }
