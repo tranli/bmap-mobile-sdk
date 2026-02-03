@@ -1,20 +1,11 @@
 plugins {
+    id 'java-library'
     id 'maven-publish'
 }
 
 group = "com.github.tranli"
 version = "5.2.0"
 
-/**
- * ✅ JitPack requires an `assemble` task.
- * Since this repo only contains a prebuilt AAR,
- * we create a dummy assemble task.
- */
-tasks.register("assemble") {
-    doLast {
-        println("Assembling prebuilt AAR...")
-    }
-}
 
 publishing {
     publications {
